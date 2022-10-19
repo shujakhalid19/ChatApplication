@@ -1,0 +1,454 @@
+body,.msgBox,.right-bar{
+    background-color:#101010;color:#fff;
+  }        
+  .bg-lav{ /* used on search */
+border-color:#505050;
+color:#f3f3f3;
+background-color: #404040;
+}
+
+  textarea{
+    background-color:transparent;
+  }
+
+  
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  background-color:transparent;
+  color:#fff;
+  border-color:#101010;
+  border-bottom:2px solid #b2bb;
+}
+
+.nav-tabs{
+  border-color:#000;
+}
+
+
+
+
+
+
+a{
+	color: inherit;
+}
+
+a:hover{
+    color:initial;
+    text-decoration: none;
+}
+
+#res > a :hover{
+    background-color: #e6e6fa51;
+}
+
+.b{
+	font-weight: bold;
+}
+
+.bd{
+	border:1px solid;
+	
+}
+
+.bd-top{
+	border-top:1px solid;
+	
+}
+
+.bd-lt{
+    border-left: 1px solid;
+}
+
+.bd-rt{
+    border-right: 1px solid;
+}
+
+.bd-btm{
+    border-bottom:1px solid;
+    
+}
+.bd,.bd-lt,.bd-btm,.bd-rt{
+    border-color:#202020;
+  }
+
+
+
+
+.bg-input{
+    border:none;
+    background-color:#404040;
+    color:#fff;
+}
+
+
+.bg-lav-drk{
+    background-color: #e6e6fa91;
+}
+
+
+.bg-lav{
+    background-color: #e6e6fa51;
+}
+
+.bg-grey{
+    background-color:#202020;
+  }
+
+
+
+.btn-silent{
+    background-color:#404040;color:#a3a3a3;
+}
+
+.btn.active{
+	background-color: cornflowerblue;
+	color: #FFF;
+}
+
+.btn-pill{
+    background-color: transparent;
+    border:2px solid cornflowerblue;
+    color:cornflowerblue;
+}
+
+.btn-pill:hover{
+    background-color: cornflowerblue;
+    border:2px solid #fff;
+    color:#fff;
+}
+
+    #pill{
+        display:inline-block;width: auto;height: auto;background-color: cornflowerblue;padding: 10px;margin:10px 10px 0px 0px;color: #FFF;border-radius:14px;
+    }
+
+.card-3{
+	border:1px solid #d4d4d4;
+	padding: 10px;
+	margin:0px 70px 30px 0px;
+}
+
+.card-2{
+	border:1px solid #d4d4d4;
+	padding: 10px;
+	margin:10px 20px 10px 0px;
+}
+
+.card-6{
+	padding: 10px;
+	margin:10px 20px 10px 0px;
+}
+
+.cl-blue{
+    color: cornflowerblue;
+}
+
+
+.cv-edge-24{
+    border-radius:24px;
+}
+
+.f-8{
+	font-size: 8px;
+}
+
+
+.f-10{
+	font-size: 10px;
+}
+
+
+.f-12{
+	font-size: 12px;
+}
+
+.f-15{
+	font-size: 15px;
+}
+
+.f-18{
+	font-size: 18px;
+}
+
+.f-22{
+	font-size: 22px;
+}
+
+.f-32{
+	font-size: 32px;
+}
+
+    
+.fixed{
+    position:fixed;z-index:9;width:14%;
+}
+
+.pd-0{
+    padding: 0px;
+}
+
+.pd-5{
+	padding: 5px;
+}
+
+.pd-10{
+	padding: 10px;
+}
+
+
+.pd-30{
+	padding: 30px;
+}
+
+.pd-top-10{
+	padding-top: 10px;
+}
+
+.pd-top-12{
+	padding-top: 12px;
+}
+
+.pd-top-20{
+    padding-top: 20px;
+}
+
+.pd-top-30{
+    padding-top: 30px;
+}
+
+.pd-lt-10{
+    padding-left: 10px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.md-10{
+    margin:10px; 
+}
+
+.md-top-10{
+    margin-top:10px; 
+}
+
+.md-top-20{
+    margin-top:20px; 
+}
+
+.md-top-30{
+    margin-top:30px; 
+}
+
+.md-top-40{
+    margin-top:50px; 
+}
+
+
+.md-rt-10{
+    margin-right:10px; 
+}
+
+.md-btm-10{
+    margin-bottom:10px;
+}
+
+.md-btm-20{
+    margin-bottom:20px;
+}
+
+.md-btm-30{
+    margin-bottom:30px;
+}
+
+.prof-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding:10px;
+}
+
+.appCard{
+    display: flex;
+}
+
+.msgBox{
+    height:100vh;
+}
+
+.right-bar{
+    height:100vh;
+}
+
+
+       
+.chat-box{
+    height:80vh;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 350px) {
+    
+    .chat-box{
+        height:77vh;
+    }
+
+    .right-bar{
+        position:fixed;z-index:+999;display: none;
+    }
+     
+    
+    .appCard > div:nth-child(2){
+        padding-left: 4%;
+    }
+    .appCard > div:nth-child(2) > h3{
+        font-size:20px;
+    }
+    .appCard > div:nth-child(2) > h4{
+        font-size:14px;
+    }
+
+    .xs-pull-right{
+        right: 0;
+        left: auto;
+        float: right;
+    }
+
+
+
+    .xs-text-right{
+        text-align: right;
+    }
+}
+
+
+ /* //height: calc(100% - 80px);Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+
+            
+    .chat-box{
+        height:80vh;
+    }    
+
+            .appCard > div:nth-child(1){
+                width:28%;
+            }
+            
+            .appCard > div:nth-child(2){
+                width:72%;
+            }
+
+
+            .msgBox{
+                position:fixed;z-index:+99;display: none;height: 100%;
+            }
+
+            .right-bar{
+                position:fixed;z-index:+999;display: none;
+            }
+            
+
+            .xs-hide{
+                display: none;
+            }
+            
+            .xs-text-right{
+                text-align: right;
+            }
+
+            .xs-pull-right{
+                right: 0;
+                left: auto;
+                float: right;
+            }
+
+            .photo{
+                height: 150px;
+            }
+
+            .col-xs-chng{
+                width: 20%;
+            }
+
+            .col-xs-12>.photo{
+                height: 250px;
+            }
+            .card-3{
+            	margin:30px 0px 0px 0px;
+
+            }
+
+            .card-3:first-of-type { 
+            	margin:0px 0px 0px 0px;
+            }
+
+            .prof-img{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                padding:10px;
+            }
+            
+            
+        }
+        
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {
+        
+            .sm-hide{
+                display: none;
+            }
+            
+            .prof-img{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                padding:10px;
+            }
+            
+        }
+        
+       /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            .appCard > div:nth-child(2){
+                padding-left:3%;
+            }
+
+            .msgBox{
+                position: relative;
+            }
+
+            .right-bar{
+                position: relative;
+            }
+            
+
+            .md-hide{
+                display:none;
+            }
+            
+            .md-rt-30{
+                 margin-right:30px;        
+            }
+
+            .prof-img{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                padding:10px;
+            }
+            
+            
+            .photo{
+                height: 250px;
+            }
+
+            .md-text-center{
+                text-align: center;
+            }
+        }

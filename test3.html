@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Unopinion</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/ui.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="styles/test-main.css">
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      
+    <style>
+        #blah{
+            width:100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        #imgAt{
+          position: absolute;
+          width:20px;height:20px;
+          background-color:transparent;
+          margin-top:0px;
+          margin-left: 95px;
+          margin-bottom:0px;
+          text-align: right;
+          cursor: pointer;
+        }
+        
+        .btn-send{
+            background-color: transparent;
+            color:cornflowerblue;
+            border:none;
+        }
+        
+        textarea{
+             resize: none;
+    overflow: hidden;
+    min-height: 50px;
+    max-height: 100px;
+        }
+        
+        textarea:focus{
+            outline:none;
+        }
+
+        body,.msgBox,.right-bar{
+            background-color:#101010;color:#fff;
+          }        
+          
+    </style>
+  </head>
+<body>
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class='col-xs-12 col-sm-4 col-md-3 bd-rt' style='height:100vh;'>
+              <h3 class="b">Search</h3>
+              
+              <form id='search' method="POST" class="col-xs-12 col-sm-4 col-md-12 pd-0">
+                <div class="form-group has-feedback">
+                    <input id='search_col' type="text" name='search' class="form-control bg-lav" placeholder="Search for a blogging website.." style="height:40px;border-width:0px 0px 2px 1px;" autocomplete="off" title="Three letter country code" />
+                    <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                </div>
+                <input type="submit" 
+                  style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+                  tabindex="-1" />
+              </form>
+              <div class="col-xs-12 col-sm-12 col-md-12 md-top-10 pd-0 md-btm-20">
+                <span style="border:4px dashed #b2bb;color:#fff;padding:8px;border-radius: 14px;">Chats</span>
+                <span style="background-color:#b2bb;color:#fff;margin-left: 20px;padding:8px;border-radius: 14px;">Groups</span>
+              </div>
+              <div class="col-xs-12 pd-0 md-top-20">
+              
+                <div class="col-xs-12 pd-0 md-top-0">
+                  <h4 style="color:#a5a9b4;">Groups </h4>
+                </div>
+              </div>
+                
+
+              
+                <div id="res" class="col-xs-12 col-sm-12 col-md-12 bd-btm pd-0 md-top-10">
+                    
+                   <div id="users" data-order='iefnai' class="pointer col-xs-12 col-sm-12 col-md-12 pd-0" >
+                      <div class="col-xs-3 col-sm-4 col-md-3 pd-0 ">
+                           <img src="https://lh3.googleusercontent.com/a-/AOh14GjGiEF0xwirsnYn6-C-EJevwgAfCqzZ3uVljrBSAA=s96-c" class="prof-img" style="width: 70px;height: 70px;">
+                         </div>
+                      <div class="col-xs-9 col-sm-8 col-md-9 pd-0 ">
+                         <h4>Shuja Khalid<span class="pull-right"><i class="glyphicon glyphicon-option-vertical"></i></span> </h4>
+                         <p class="f-12">shujakhalid26@gmail.com</p>
+                      </div>
+                   </div>
+                   <div id="users" data-order='werrwer' class="pointer col-xs-12 col-sm-12 col-md-12 pd-0" >
+                      <div class="col-xs-3 col-sm-4 col-md-3 pd-0 "> <img src="https://lh3.googleusercontent.com/a-/AOh14Ggo6-w-X7JJJjNWOMed8qL3rjexCP77Ow8KCpLJ=s96-c" class="prof-img" style="width: 70px;height: 70px;"> </div>
+                      <div class="col-xs-9 col-sm-8 col-md-9 pd-0 ">
+                         <h4>TestUser<span class="pull-right"><i class="glyphicon glyphicon-option-vertical"></i></span> </h4>
+                         <p class="f-12">shujakhalid7@gmail.com</p>
+                      </div>
+                   </div>
+                   <a href="#asd"><div id="users" data-order='uihugb' class="pointer col-xs-12 col-sm-12 col-md-12 pd-0" >
+                      <div class="col-xs-3 col-sm-4 col-md-3 pd-0 "> <img src="https://i.pravatar.cc/150?u=fake@pravatar.com" class="prof-img" style="width: 70px;height: 70px;"> </div>
+                      <div class="col-xs-9 col-sm-8 col-md-9 pd-0 ">
+                         <h4>John Doe<span class="pull-right"><i class="glyphicon glyphicon-option-vertical"></i></span> </h4>
+                         <p class="f-12">john@gmail.com</p>
+                      </div>
+                   </div></a> 
+                    
+                </div>
+
+            </div>
+            <div class='xs-hide col-xs-12 col-sm-4 col-md-6  pd-0' style='height:100vh;'>
+                <div class='col-xs-12 col-sm-12 col-md-12' style="height:auto;">
+                  <div class='col-xs-3 col-sm-12 col-md-2 pd-0 '>
+                    <img src='images/profile_placeholder.png' class='prof-img' style="width: 60px;height: 60px;" />
+                  </div>  
+                  <div class='col-xs-9 col-sm-12 col-md-10 pd-0 '>
+                    <h4>Azam
+                      <span class='pull-right'><i class="	glyphicon glyphicon-option-vertical"></i></span>
+                    </h4>
+                    <p class='f-12'>Message is this</p>
+                      
+                  </div>
+                </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 chat-box" style='height:80vh;overflow-y:auto;'>
+                      <div id="message">
+                        <!-- http://www.tiagoalexandrelopes.com -->
+
+
+
+
+  
+                          
+                      </div>
+                      
+                  </div>
+                  <div id='msg-inp' class='col-xs-12 col-sm-12 col-md-12 pd-10 bd' style='position:absolute;top:auto;bottom:0px;'>
+                       <div class='preview hide col-xs-12 col-sm-12 col-md-12 md-btm-10'>
+                             <!--<div style="position:absolute;width:40px;height:40px;background-color: aqua;margin:0px 10px 0px 110px;">&times;</div>-->
+                             <div id="imgAt" class="f-15" onclick="triggerOff()"><i class="fa fa-times"></i></div>
+                             <img src="" style="width:100px;height:100px;border-radius:14px;object-fit: cover;" alt="Image not selected"/>
+                             
+                         </div>
+                        
+                    <form id="message-form" class="col-xs-12 col-sm-12 col-md-12 pd-0" action="#">
+                      <div class="col-xs-12" style="display: flex;">
+                        <!--<input class="mdl-textfield__input form-control" autocomplete="off" type="text" id="message" style="width:100%;height:40px;">-->
+                          <textarea style="width:100%;border:none;" placeholder="Message.."  oninput="auto_grow(this)"></textarea>
+                        <button id="submit" type="submit" class="btn-send pull-right">
+                          Send
+                        </button>
+                      </div>
+                      
+                    </form>
+                      <div class="col-xs-12 col-sm-12 col-md-12 f-18 pd-5 md-top-0">
+                          <span onclick="trigimage()"><i class="fa fa-image"></i></span>
+                          &nbsp;&nbsp;&nbsp;&nbsp;
+                         <span onclick="set_explode()">🎉</span>
+                      </div>
+                      
+                         
+                  </div>
+                
+            </div>
+            <div class="right-bar col-xs-12 col-sm-12 col-md-3 pd-top-12" style="height: 100vh;">
+                <div class='col-xs-12 col-sm-12 col-md-12 pd-top-12 text-center'>
+                  <img src='images/profile_placeholder.png' class='prof-img' style="width:110px;height: 110px;" />
+                </div>  
+                <div class='col-xs-12 col-sm-12 col-md-12 text-center'>
+                  <h3>Shuja Khalid</h3>
+                  <p class='f-12 text-muted'>@shujakhalid</p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                  <h5 class="text-muted b">Chat Themes</h5>
+                  <div class="appCard md-top-20" style="justify-content: space-evenly;">
+                    <div style="width:50px;height:50px;background-color:palevioletred;"></div>
+                    <div style="width:50px;height:50px;background-color:cadetblue;"></div>
+                    <div style="border:2px solid cornflowerblue;width:50px;height:50px;background-color:#202020;"></div>
+                    <div style="width:50px;height:50px;background-color:#a5a9b4;"></div>
+                  </div>
+                  <div class="md-top-20">
+                    <div class="pointer md-top-40 b cl-blue"><i class="fa fa-comments"></i> Start a group</div>
+                    <div class="pointer text-danger md-top-40 b"><i class="fa fa-info-circle"></i> Report</div>
+                  </div>
+                    
+                </div>
+                
+            </div>
+     
+                          
+        </div>
+    </div>
+</body>
+<script src="scripts/sidebar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.3/dist/confetti.browser.min.js"></script>
+    <script>
+       window.location.hash='#home';
+    window.sessionStorage.setItem('device','<?=$_SESSION["userId"];?>');
+    $(function(){
+      //console.warn('device:'+window.sessionStorage.getItem('device'));
+      
+    });
+
+    
+
+
+    </script>
+    <script>
+        var count = 200;
+var defaults = {
+  origin: { y: 0.7 }
+};
+        
+
+
+function fire(particleRatio, opts) {
+    
+  confetti(Object.assign({}, defaults, opts, {
+    particleCount: Math.floor(count * particleRatio)
+  }));
+}
+
+function explode(){
+    fire(0.25, {
+      spread: 26,
+      startVelocity: 55,
+    });
+    fire(0.2, {
+      spread: 60,
+    });
+    fire(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8
+    });
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2
+    });
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 45,
+    });
+}
+    </script>
+    <script>
+/*   */
+        function auto_grow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight)+"px";
+}
+        
+        function sort_list(){
+            var order='werrwer';
+            var el=document.getElementsByClassName('pointer');
+            $.each(el, function(k,i){
+                //console.log($(i).attr('data-order'));
+                if($(i).attr('data-order')==order){
+                    $(i).prependTo(i.parentNode);
+                }
+            })
+            
+        }
+        
+        
+        function trigimage() {
+        $("#imgFile").trigger('click');
+    }
+    
+    function triggerOff(){
+        $("#imgFile").val("");
+        $('.preview').addClass('hide');
+        $('.preview').attr('src', '');
+        $('.image_deselector').replaceWith("<div class='pull-right image_selector pd-10' onclick='trigimage()'><span class='glyphicon glyphicon-picture text-muted f-22'></span></div>");
+    }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+
+            reader.onload = function(e) {
+                //console.warn(e.target.result);
+                $('.preview').removeClass('hide');
+                $('.preview > img').attr('src', e.target.result);
+                //$('.image_selector').replaceWith("<div class='pull-right image_deselector pd-10' onclick='triggerOff()'><span class='glyphicon glyphicon-remove text-muted f-22'></span></div>");
+                //$('#blah').attr('src', e.target.result);
+                //$("#attach_img").html('<img src="' + e.target.result + '" id="blah" alt="image not rendered"><div id="imgAt" style="display:inline-block;width:50px;height:50px;background-color:#fff;text-align:center;padding-top:15px;" class="f-15" onclick="trigimage()"><i class="fa fa-redo-alt"></i></div>');
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+
+
+    $("#imgFile").change(function() {
+        readURL(this);
+    });
+        
+    
+    </script>
+    <script src="scripts/explode.js"></script>
+</html>

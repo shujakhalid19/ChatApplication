@@ -1,0 +1,417 @@
+body{
+    background-color:#101010;
+    color:#fff;
+}
+
+.th-light body{
+    background-color:#fff;
+    color:#000;
+}
+
+
+
+#msg-inp{
+    background-color:#000;
+  }
+
+  textarea{
+    background-color:transparent;
+  }
+
+
+a{
+	color: inherit;
+}
+
+a:hover{
+    color:initial;
+    text-decoration: none;
+}
+
+#res > a :hover{
+    background-color: #e6e6fa51;
+}
+
+.b{
+	font-weight: bold;
+}
+
+.bd{
+    border:1px solid #000;
+}
+
+.th-light .bd{
+	border:1px solid #d4d4d4;
+	
+}
+
+.bd-lt{
+    border-left:1px solid #000;
+}
+
+.th-light .bd-lt{
+    border-left: 1px solid #d4d4d4;
+}
+
+.bd-rt{
+    border-right:1px solid #000000;
+}
+.th-light .bd-rt{
+    border-right: 1px solid #d4d4d4;
+}
+
+.bd-btm{
+    border-bottom:1px solid #000;
+}
+
+.th-light .bd-btm{
+    border-bottom:1px solid #d4d4d4;
+    
+}
+
+.bg-lav-drk{
+    background-color: #e6e6fa91;
+}
+
+
+.bg-lav{ /* used on search */
+    border-color:#505050;
+    color:#f3f3f3;
+    background-color: #404040;
+}
+
+.th-light .bg-lav{
+    background-color: #e6e6fa51;
+}
+
+.bg-grey{
+	background-color: #404040;
+}
+
+.th-light .bg-grey{
+    background-color: #eee;
+}
+
+.btn.active{
+	background-color: cornflowerblue;
+	color: #FFF;
+}
+
+.btn-pill{
+    background-color: transparent;
+    border:2px solid cornflowerblue;
+    color:cornflowerblue;
+}
+
+.btn-pill:hover{
+    background-color: cornflowerblue;
+    border:2px solid #fff;
+    color:#fff;
+}
+
+    #pill{
+        display:inline-block;width: auto;height: auto;background-color: cornflowerblue;padding: 10px;margin:10px 10px 0px 0px;color: #FFF;border-radius:14px;
+    }
+
+.card-3{
+	border:1px solid #d4d4d4;
+	padding: 10px;
+	margin:0px 70px 30px 0px;
+}
+
+.card-2{
+	border:1px solid #d4d4d4;
+	padding: 10px;
+	margin:10px 20px 10px 0px;
+}
+
+.card-6{
+	padding: 10px;
+	margin:10px 20px 10px 0px;
+}
+
+.cl-blue{
+    color: cornflowerblue;
+}
+
+
+.cv-edge-24{
+    border-radius:24px;
+}
+
+.f-12{
+	font-size: 12px;
+}
+
+.f-15{
+	font-size: 15px;
+}
+
+.f-18{
+	font-size: 18px;
+}
+
+.f-22{
+	font-size: 22px;
+}
+
+.f-32{
+	font-size: 32px;
+}
+
+    
+.fixed{
+    position:fixed;z-index:9;width:14%;
+}
+
+.pd-0{
+    padding: 0px;
+}
+
+.pd-5{
+	padding: 5px;
+}
+
+.pd-10{
+	padding: 10px;
+}
+
+
+.pd-30{
+	padding: 30px;
+}
+
+.pd-top-10{
+	padding-top: 10px;
+}
+
+.pd-top-12{
+	padding-top: 12px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.md-10{
+    margin:10px; 
+}
+
+.md-top-10{
+    margin-top:10px; 
+}
+
+.md-top-20{
+    margin-top:20px; 
+}
+
+.md-top-30{
+    margin-top:30px; 
+}
+
+.md-top-40{
+    margin-top:50px; 
+}
+
+
+.md-rt-10{
+    margin-right:10px; 
+}
+
+.md-btm-10{
+    margin-bottom:10px;
+}
+
+.md-btm-20{
+    margin-bottom:20px;
+}
+
+.md-btm-30{
+    margin-bottom:30px;
+}
+
+.prof-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding:10px;
+}
+
+.appCard{
+    display: flex;
+}
+
+.th-light .msgBox{
+    background-color:#fff; height:100vh;
+}
+
+.msgBox{
+    background-color: #202020;
+}
+
+.th-light .msgBox{
+    background-color: #fff;
+}
+
+
+       
+.chat-box{
+    height:80vh;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 350px) {
+    
+    .chat-box{
+        
+        height:77vh;
+    }
+
+    
+    .appCard > div:nth-child(2){
+        padding-left: 4%;
+    }
+    .appCard > div:nth-child(2) > h3{
+        font-size:20px;
+    }
+    .appCard > div:nth-child(2) > h4{
+        font-size:14px;
+    }
+
+    .xs-pull-right{
+        right: 0;
+        left: auto;
+    }
+
+    .xs-text-right{
+        text-align: right;
+    }
+}
+
+
+ /* //height: calc(100% - 80px);Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+
+            
+    .chat-box{
+        height:80vh;
+    }   
+    
+    #msg-inp{
+        position:absolute;top:auto;bottom:10px;
+    }
+
+            .appCard > div:nth-child(1){
+                width:28%;
+            }
+            
+            .appCard > div:nth-child(2){
+                width:72%;
+            }
+
+
+            .msgBox{
+                position:absolute;z-index:+99;display: none;
+            }
+            
+
+            .xs-hide{
+                display: none;
+            }
+            
+            .xs-text-right{
+                text-align: right;
+            }
+
+            .xs-pull-right{
+                right: 0;
+                left: auto;
+            }
+
+            .photo{
+                height: 150px;
+            }
+
+            .col-xs-chng{
+                width: 20%;
+            }
+
+            .col-xs-12>.photo{
+                height: 250px;
+            }
+            .card-3{
+            	margin:30px 0px 0px 0px;
+
+            }
+
+            .card-3:first-of-type { 
+            	margin:0px 0px 0px 0px;
+            }
+
+            .prof-img{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                padding:10px;
+            }
+            
+            
+        }
+        
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {
+        
+
+            .sm-hide{
+                display: none;
+            }
+            
+            .prof-img{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                padding:10px;
+            }
+            
+        }
+        
+       /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            .appCard > div:nth-child(2){
+                padding-left:3%;
+            }
+
+            .msgBox{
+                position: relative;
+            }
+            
+
+            .md-hide{
+                display:none;
+            }
+            
+            .md-rt-30{
+                 margin-right:30px;        
+            }
+
+            .prof-img{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                padding:10px;
+            }
+            
+            
+            .photo{
+                height: 250px;
+            }
+
+            .md-text-center{
+                text-align: center;
+            }
+        }

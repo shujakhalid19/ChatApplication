@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Unopinion</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/ui.css">
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <style>
+      .dg-input{
+          border:1px solid red;
+        }
+
+    </style>
+  </head>
+<body>
+    <div class="container-fluid">
+        
+        <div class="row">
+       
+  <header class="col-xs-12  col-sm-12 col-md-12 pd-0">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4 md-top-40  pd-0">
+      
+      <div class="">
+          <div class='col-xs-3 col-sm-12 col-md-2 pd-0 '>
+            <img src="" id="user-pic" class="hide prof-img" style="width:95px;height:95px;object-fit: cover;" alt="Image not available"/>
+          </div>  
+           <div class='col-xs-9 col-sm-12 col-md-9 pd-0'>
+                    <h4  hidden id="user-name" class='pd-top-10 pull-left'></h4>
+                      <span class='pull-right md-top-20'><i class="glyphicon glyphicon-option-vertical"></i></span>
+                  </div>
+        
+        
+        <div hidden id="user-name" class="f-18 b"></div>
+        <!--<button id="sign-out" class="hide btn btn-md btn-success">
+          Sign-out
+        </button>-->
+        <button id="sign-in" class="hide btn btn-md btn-primary">
+          <i class="material-icons">account_circle</i>Sign-in with Google
+        </button>
+        <a href="chat.php">FODSJDNJDJSSNDJNSJD</a>
+      </div>
+        <div class="userfm col-xs-12 col-sm-12 col-md-12 hide">
+            <h3>Create username</h3>
+            <p>Friends can find you by your username.</p>
+            <br/>
+            <form id='username_form' method="POST">
+   
+                <div class="form-group">
+                    <label>Username</label>
+                    <div class="msg hide md-btm-10"></div>
+                    <input id='unm' type="text" class="form-control" placeholder="eg: john23doe"  style="height: 40px;" autocomplete="off" />
+                    
+                </div>
+                <div class="form-group md-top-30">
+                    <button class='btn btn-success form-control btn-lg' style="height: 40px;">Create</button>
+                </div>
+            </form>
+        </div>
+           <div class="userps col-xs-12 col-sm-12 col-md-12 hide">
+            <h3>Create password</h3>
+            
+            <br/>
+            <form id='user_form' method="POST">
+   
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="msg hide md-btm-10"></div>
+                    <input id='p1' type="text" class="form-control" placeholder="eg: john23doe"  style="height: 40px;" autocomplete="off" />
+                    
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <div class="msg hide md-btm-10"></div>
+                    <input id='p2' type="text" class="form-control" placeholder="eg: john23doe"  style="height: 40px;" autocomplete="off" />
+                    
+                </div>
+                <div class="form-group md-top-30">
+                    <button class='btn btn-success form-control btn-lg' style="height: 40px;">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </header>                
+        </div>
+    </div>
+</body>
+<script>
+    $(function(){
+        $('#unm').on('keydown input',function(event){
+            switch (event.which) {
+            //case 8:  // Backspace
+            case 9:  // Tab
+            case 13: // Enter
+            case 32:return false;  // Space
+            //case 37:// Left
+            case 38: // Up
+            //case 39: // Right
+            case 40: // Down
+            case 191:return false;  // /
+            break;
+            default:
+            var regex = new RegExp("^[a-zA-Z0-9.,]+$");
+            var key = event.key;
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+            break;
+        }
+        })
+        $("#unm").on('keyup input', function(event){
+             //console.log(event.target.value);
+        });
+        
+        $("#username_form").on('submit',function(e){
+            e.preventDefault();
+            //var s='!@#$%^&*()-_=sh `~uja@@.k-*/^^ha{}]\lid;;;;""///';
+            var s=$('#unm').val();
+            var formData = new FormData();
+            var x=JSON.parse(localStorage.getItem('g'));
+            /*formData.append('name',x.name);
+            formData.append('email',x.email);
+            formData.append('pice',x.pic);
+            formData.append('time',x.time);*/
+              
+              
+            if(s.length == 0){
+                $("#unm").addClass('dg-input');
+                $(".msg").removeClass('hide').text("Field cannot be left empty");
+                return false;
+            }
+            var regex = new RegExp("^[a-zA-Z0-9.,]+$");
+            s=s.replace(/[A-Z|&;!#!*=` $%@^"/'<>(){}\! \[\[\],+-]/g,"");
+            formData.append('username',s);
+            $.ajax({
+                type:"POST",
+                url:"requests/login.php",
+                data:formData,
+                contentType: false,
+                processData: false,
+                success:function(data){
+                    var resp=JSON.parse(data);
+                    if(resp.av && resp.state){
+                        //username available
+                        $("#unm").removeClass('dg-input');
+                        $(".msg").addClass('hide').text("");
+                        var x=JSON.parse(localStorage.getItem('g'));
+                        x['username']=s;
+                        localStorage.setItem('g',JSON.stringify(x));
+                        $('.userfm').hide();
+                        $('.userps').removeClass('hide');
+                        
+                    }else{
+                        $("#unm").addClass('dg-input');
+                        $(".msg").removeClass('hide').text("Username already taken");
+                    }
+                }
+            })
+        
+        });//userform
+        //new user save
+        $('#user_form').on('submit', function(e){
+            e.preventDefault();
+            var a=$('#p1').val();
+            var b=$('#p2').val();
+            $('#p1 ,#p2').removeClass('dg-input');
+            if(a.length == 0){
+                
+                $("#p1").addClass('dg-input');
+                $(".msg1").removeClass('hide').text("Field cannot be left empty");
+            }else if(b.length == 0){
+                
+                $("#p2").addClass('dg-input');
+                $(".msg2").removeClass('hide').text("Field cannot be left empty");
+            }else if(a !== b){
+                $("#p1").addClass('dg-input');
+                $("#p2").addClass('dg-input');
+                $(".msg2").removeClass('hide').text("Field cannot be left empty");
+            }else if(a.length <= 5){
+                $("#p1").addClass('dg-input');
+                $("#p2").addClass('dg-input');
+                $(".msg2").removeClass('hide').text("Atleast 6 characters required");
+                return false;
+             }else{
+                var formData = new FormData();
+                var x=JSON.parse(localStorage.getItem('g'));
+                if(x.username==null){
+                  alert('Username not set');
+                  return false;
+                }else if(x.username=="" || x.username==" "){
+                  alert('Empty username');
+                  return false;
+                }else{
+                    formData.append('name',x.name);
+                    formData.append('email',x.email);
+                    formData.append('pice',x.pic);
+                    formData.append('time',x.time);
+                    formData.append('unm',x.username);
+                    formData.append('pass',a);
+                    formData.append('save',true);
+                    $.ajax({
+                        type:"POST",
+                        url:"requests/login.php",
+                        data:formData,
+                        contentType: false,
+                        processData: false,
+                        success:function(data){
+                            var resp=JSON.parse(data);
+                            if(resp.state===1){
+                                alert('Hurray');
+                            }else{
+                                alert('Nope')
+                            }
+                        }
+                    });
+                }//end else
+            }
+            
+            
+            
+        })
+    })
+</script>
+    
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+<script>
+ 
+    
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyA9u7OczwCe73M8lbGwFrTjDsasNis0H5I",
+      authDomain: "webchat-439a6.firebaseapp.com",
+      projectId: "webchat-439a6",
+      databaseURL: "https://webchat-439a6-default-rtdb.firebaseio.com",
+      storageBucket: "webchat-439a6.appspot.com",
+      messagingSenderId: "534912297138",
+      appId: "1:534912297138:web:4f5775c362a823015b01ab",
+      measurementId: "G-HQMR39F7TW"
+    };
+    //testfirebaseapp-726ec"
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+  </script>
+  <script src="scripts/auth.js"></script>
+    
+  <!-- <script src="scripts/main.js"></script> -->
+</html>

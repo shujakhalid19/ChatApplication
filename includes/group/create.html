@@ -1,0 +1,180 @@
+<style>
+    input,textarea{
+        width: 100%;height:40px;
+        background-color: transparent;
+        padding: auto;
+        border:none;
+        border-bottom: 1px solid #a5a9b4;
+        margin-bottom: 20px;
+
+    }
+
+    input:focus{
+        outline: none;
+    }
+
+
+    input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    #a5a9b482;
+    }
+</style>
+<div class="col-xs-12 col-sm-12 col-md-12 bg-lav">
+    <h4>New Group</h4>
+</div>
+<div class="preview text-center col-xs-12 col-sm-4 col-md-4 md-top-30 pd-10">
+     <img src="" class="hide" style="height:80px;border:2px solid #b2bb" /> 
+    <div  class="text-center pre" style="width:100%;height:80px;font-size: xx-large;padding-top: 30px;"  onclick="trigimage(0)">
+        <i class="fa fa-image"></i>
+    </div>
+    <br/>
+    <h6 class="b cl-blue text-center col-xs-12"  onclick="trigimage(0)">Upload Picture</h6>
+    
+    
+</div>
+<div class="col-xs-12 col-sm-12 col-md-8 pd-10 md-top-30">
+  <form id="newgp" method="POST">
+    <div class='hide alert alert-danger f-12'></div>
+    <div class='hide alert alert-success successtime f-12'>Group created and saved to your groups.</div>
+    <div style="position: absolute;margin:-2000px;">
+        <input name="fileToUploadapp" type="file" id="imgFile" style="opacity:0;" />
+        </div>
+      <input id="gn" type="text" name="gname" placeholder="Group Name" />
+      <br/>
+      <input id="unm" type="text" name="category" placeholder="#category" />
+        <input type="hidden" id="time" name="time" />
+      <br/>
+      <textarea name="description" placeholder="About this group" class="md-top-10"></textarea>
+      <button type="submit" class="btn btn-md btn-primary">Join Group</button>
+  </form>
+  
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <h5 style="color:#a5a9b4">Members</h5>
+
+  
+
+</div>
+<script>
+  $(document).on('click','.errtimes', function(){
+    $(this).parent().hide();
+  })
+         
+  function trigimage() {
+    $("#imgFile").trigger('click');
+  }
+
+function validate(){
+  var fl=document.getElementById("imgFile");
+  var nm=$("#gn").val();
+  var cat=$("#unm").val();
+
+  if( fl.files.length == 0 ){
+    console.log("no files selected");
+    return false;
+  }else if(nm=="" || nm==" " || nm==null){
+    console.log("Fields cannot be left empty!");
+    return false;
+  }else if(cat=="" || cat==" " || cat==null){
+    console.log("Fields cannot be left empty!");
+    return false;
+  }else{
+    return true;
+  }
+
+}
+
+function triggerOff(){
+    $("#imgFile").val("");
+    $('.preview').addClass('hide');
+    $('.preview').attr('src', '');
+    $('.image_deselector').replaceWith("<div class='pull-right image_selector pd-10' onclick='trigimage()'><span class='glyphicon glyphicon-picture text-muted f-22'></span></div>");
+}
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+
+        reader.onload = function(e) {
+            //console.warn(e.target.result);
+            $('.preview').removeClass('hide');
+            $('.preview > div').addClass('hide');
+            $('.preview > img').removeClass('hide');
+            $('.preview > img').attr('src', e.target.result);
+            //$('.image_selector').replaceWith("<div class='pull-right image_deselector pd-10' onclick='triggerOff()'><span class='glyphicon glyphicon-remove text-muted f-22'></span></div>");
+            //$('#blah').attr('src', e.target.result);
+            //$("#attach_img").html('<img src="' + e.target.result + '" id="blah" alt="image not rendered"><div id="imgAt" style="display:inline-block;width:50px;height:50px;background-color:#fff;text-align:center;padding-top:15px;" class="f-15" onclick="trigimage()"><i class="fa fa-redo-alt"></i></div>');
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
+
+$("#imgFile").change(function() {
+    readURL(this);
+});
+   
+
+
+$('#newgp').on('submit',function(e){
+      e.preventDefault();
+      //alert('asd');
+      var s=$('#unm').val().toLowerCase();
+
+      if(s.length == 0){
+        $("#unm").addClass('dg-input');
+        $(".msg").removeClass('hide').text("Field cannot be left empty");
+        return false;
+      }
+      var regex = new RegExp("^[a-zA-Z0-9.,]+$");
+      s=s.replace(/[A-Z|&;!#!*=` $%@^"/'<>(){}\! \[\[\],+-]/g,"");
+      $("#unm").val(s);      
+      $("#time").val(d.getTime());
+      if(validate()){
+        //ok
+          var formData = new FormData(this);
+          $.ajax({
+            xhr: function() {
+              var xhr = new window.XMLHttpRequest();
+              xhr.upload.addEventListener("progress", function(evt) {
+
+                  if (evt.lengthComputable) {
+                      var percentComplete = (evt.loaded / evt.total) * 100;
+                      //Do something with upload progress here
+                      $('.progress-bar').animate({
+                          width: percentComplete+"%",
+                          opacity: 1
+                        }, 1000 );
+                      
+                  }
+            }, false);
+            return xhr;
+          },
+              type:"POST",
+              url:"requests/groups.php",
+              data:formData,
+              success:function(data){
+                  var resp=JSON.parse(data);
+                  if(resp.status){
+                    $('.successtime').removeClass('hide');    
+                  }else{
+                    $(".alert").removeClass('hide').html(resp.msg+'<span class="pointer fa fa-times pull-right errtimes"></span>');
+
+                  }
+              },
+              cache: false,
+              contentType: false,
+              processData: false
+
+          });  
+
+
+      }else{
+        //no
+        console.warn('BI');
+      }
+      
+    })
+</script>

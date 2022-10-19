@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Unopinion</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/test-main.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/ui.css">
+    <script src="assets/js/client.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <style>
+          .bd,.bd-lt,.bd-btm,.bd-rt{
+            border-color:#202020;
+          }
+          .modal-backdrop{
+            z-index:+99;
+          }
+            
+
+        #blah{
+            width:100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        #imgAt{
+          position: absolute;
+          width:20px;height:20px;
+          background-color:transparent;
+          margin-top:0px;
+          margin-left: 95px;
+          margin-bottom:0px;
+          text-align: right;
+          cursor: pointer;
+        }
+        
+        .btn-send{
+            background-color: transparent;
+            color:cornflowerblue;
+            border:none;
+        }
+        
+        textarea{
+             resize: none;
+    overflow: hidden;
+    min-height: 50px;
+    max-height: 100px;
+        }
+        
+        textarea:focus{
+            outline:none;
+        }
+
+        body,.msgBox,.right-bar{
+            background-color:#101010;color:#fff;
+          }        
+          
+          .popover{
+            background-color:#202020;
+            padding:0px;
+          }
+
+          div::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+div::-webkit-scrollbar-thumb {
+    background:#20202011;
+}html,body{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+          
+    </style>
+    <script>
+      $(document).ready(function(){
+        //$("[data-toggle=popover]").each(function(i, obj) {
+
+$(this).popover({
+    container: 'body',
+    html: true,
+    //selector: '[rel="popover"]', //Sepcify the selector here
+    selector:'[data-toggle=popover]',
+    content: function() {
+      var id = $(this).attr('id')
+      //alert(id);
+      return $('#popover-content-' + id).html();
+      //return $(this).parent().find('#popover-content-' + id).html();
+    }
+});
+
+//}); 
+      })
+    </script>
+    
+  </head>
+<body>
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class='col-xs-12 col-sm-4 col-md-8 bd-rt' style='height:100vh;overflow-x:hidden;'>
+              <h3 class="b">Groups</h3>
+              
+              <form id='search' method="POST" class="col-xs-12 col-sm-4 col-md-6 pd-0">
+                <div class="form-group has-feedback">
+                    <input id='search_col' type="text" name='search' class="form-control bg-lav" placeholder="Search for a blogging website.." style="height:40px;border-width:0px 0px 2px 1px;" autocomplete="off" title="Three letter country code" />
+                    <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                </div>
+                <input type="submit" 
+                  style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+                  tabindex="-1" />
+              </form>
+              <div class="col-xs-12 col-sm-12 col-md-12 md-top-10 pd-0 md-btm-20">
+                <a href="#profile" id="create">
+                  <span style="border:4px dashed #b2bb;color:#fff;padding:8px;border-radius: 14px;">Create</span>
+                </a>
+                <span style="background-color:#b2bb;color:#fff;margin-left: 20px;padding:8px;border-radius: 14px;">Groups</span>
+              </div>
+              <div class="col-xs-12 pd-0 md-top-20">
+              
+                <div class="col-xs-12 pd-0 md-top-0">
+                  <h4 style="color:#a5a9b4;">Groups </h4>
+                  <div id="groups" class="col-xs-12 col-sm-12 col-md-12 md-top-20">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-bar col-xs-12 col-sm-4 col-md-4 pd-0" style="height: 100vh;">
+              
+                <div class="col-xs-12 col-sm-4 col-md-5 md-top-30">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4j1w2KncW3Yo6mbx5ENIPSs3is4MKRJr4bQ&usqp=CAU" style="height:100px;border:2px solid #b2bb" />
+                    <h4 class="b">Group Name</h4>
+                    <span style="color:#a5a9b4">#science</span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 pd-10 md-top-40">
+                  <p>Description</p>
+                  <button data-toggle="popover" data-container="body" data-placement="left" type="button" data-html="true" id="login" class="btn btn-md btn-primary">Join Group</button>
+                <!-- POPOVER -->  
+                <div id="popover-content-login" class="hide">
+                    <div class="pointer pd-top-10"><i class="fa fa-user"></i>&nbsp;&nbsp; <span class="pointer ">View Profile</span></div>
+                    <div class="pd-top-10"><i class="fa fa-comment"></i>&nbsp;&nbsp; <span class="pointer">Add to Chatlist</span></div>
+                    <div class="pd-top-10"><i class="fa fa-minus"></i>&nbsp;&nbsp; <span class="pointer"> Remove</span></div>
+                    <div class="pd-top-10"><i class="fa fa-info"></i>&nbsp;&nbsp;  <span class="pointer">Report</span></div>
+                </div>
+
+                <button data-toggle="popover" data-container="body" data-placement="left" type="button" data-html="true" id="login2" class="btn btn-md btn-primary">Join Group</button>
+                <!-- POPOVER -->  
+                <div id="popover-content-login2" class="hide">
+                    <div class="pointer pd-top-10"><i class="fa fa-user"></i>&nbsp;&nbsp; <span class="pointer ">View Profile</span></div>
+                    <div class="pd-top-10"><i class="fa fa-comment"></i>&nbsp;&nbsp; <span class="pointer">Add to Chatlist</span></div>
+                    <div class="pd-top-10"><i class="fa fa-minus"></i>&nbsp;&nbsp; <span class="pointer"> Remove</span></div>
+                    <div class="pd-top-10"><i class="fa fa-info"></i>&nbsp;&nbsp;  <span class="pointer">Report</span></div>
+                </div>
+                <!-- //POPOVER -->
+
+                
+                </div>
+                <div id="asd" class="col-xs-12 col-sm-12 col-md-12">
+                  <h5 style="color:#a5a9b4">Members</h5>
+
+                  <div id="users" data-order='iefnai' class="pointer col-xs-3 col-sm-12 col-md-3 pd-0 md-top-20" >
+                    <img src="https://generated.photos/vue-static/home/hero/4.png" class="prof-img" style="width: 70px;height: 70px;">
+                    <div>Username</div>
+                  </div>
+
+                  <div id="users" data-order='iefnai' class="pointer col-xs-3 col-sm-12 col-md-3 pd-0 md-top-20" >
+                    <img src="https://generated.photos/vue-static/home/hero/4.png" class="prof-img" style="width: 70px;height: 70px;">
+                    <div>Username</div>
+                  </div>
+
+                  <div id="users" data-order='iefnai' class="pointer col-xs-3 col-sm-12 col-md-3 pd-0 md-top-20" >
+                    <img src="https://generated.photos/vue-static/home/hero/4.png" class="prof-img" style="width: 70px;height: 70px;">
+                    <div>Username</div>
+                  </div>
+
+                  <div id="users" data-order='iefnai' class="pointer col-xs-3 col-sm-12 col-md-3 pd-0 md-top-20" >
+                    <img src="https://generated.photos/vue-static/home/hero/4.png" class="prof-img" style="width: 70px;height: 70px;">
+                    <div>Username</div>
+                  </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+window.d=new Date();  
+
+var getText = function(url, callback) // How can I use this callback?
+  {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function()
+    {
+        if (request.readyState == 4 && request.status == 200)
+        {
+            callback(request.responseText); // Another callback here
+        }
+    }; 
+    request.open('GET', url);
+    request.send();
+  }
+  
+  
+  
+  $(function(){
+
+    $(document).on('keydown input','#unm',function(event){
+          switch (event.which) {
+            //case 8:  // Backspace
+            case 9:  // Tab
+            case 13: // Enter
+            case 32:return false;  // Space
+            //case 37:// Left
+            case 38: // Up
+            //case 39: // Right
+            case 40: // Down
+            case 191:return false;  // /
+            break;
+            default:
+            var regex = new RegExp("^[a-zA-Z0-9.,]+$");
+            var key = event.key;
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+            break;
+          }
+    })
+   
+    $('#create').on('click', function(){
+      getText('includes/group/create.html', mycallback=>{
+        $('.right-bar').html(mycallback);
+      }); //passing mycallback as a method
+    })
+
+
+    $(document).on('click','#description', function(){
+      var n=$(this).attr('data-name');
+      var k=$(this).attr('data-key');
+      var img=$(this).attr('data-img');
+      var ct=$(this).attr('data-category');
+      var ds=$(this).attr('data-description');
+
+      //dt=JSON.stringify(dt);
+      $('.right-bar').html('');  
+      $.ajax({type:"POST",url:'includes/group/description.php',data:{'name':n,'category':ct,'description':ds,'key':k,'md':3,'im':img},
+        success:function(data){
+          $('.right-bar').html(data);  
+        }
+      });
+
+    })
+
+    $(document).on('click','#join_gc',function(){
+      var k=$(this).attr('data-key');
+      $.ajax({type:"POST",url:'requests/groups.php',data:{'join':true,'key':k,time:d.getTime()},
+        success:function(data){
+          
+        }
+      });
+    })
+
+    //popular rooms
+    $.ajax({type:"POST",url:'requests/groups.php',data:{'pop':true},
+      success:function(data){
+        data=JSON.parse(data);
+        let h='';
+        $.each(data,function(key,index){
+          //console.log(index);
+          var image='uploads/groups/'+index.keyUnique+'/pfp/appIcon.'+index.iconType;
+                
+          h+='<a href="#profile" id="description" data-img="'+image+'"  data-name="'+index.gname+'" data-key="'+index.keyUnique+'" data-category="'+index.category+'" data-description="'+index.description+'" ><div class="col-xs-6 col-sm-4 col-md-3 md-btm-20"> <img src="'+image+'" style="width:100px;height:100px;border:2px solid #b2bb" /> <h4 class="b">'+index.gname+'</h4> <span style="color:#a5a9b4">#'+index.category+'</span> </div></a> ';
+        });
+        $('#groups').append(h);
+      }
+    });
+
+ 
+    $(document).on('submit','#editgc',function(e){
+      e.preventDefault();
+      var formData = new FormData(this);
+      formData.append('gp',room)
+      $.ajax({type:"POST",url:"requests/groups.php",
+        type:"POST",
+        url:"requests/groups.php",
+        data:formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success:function(data){
+          console.warn(data);
+        }})
+    })
+
+  })
+</script>
+<script src="scripts/sidebar.js"></script>
+</html>
