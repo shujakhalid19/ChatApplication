@@ -5,5 +5,5 @@ An awesome web chat application which is both modern looking and user friendly b
 AMA on my [discord server](https://discord.gg/PFqtwbVXMK)
 
 <p align="center">
-  <img src="./abouts/desktop/a.png" width="400" height="350" title="hover text">
+  <img src="./abouts/desktop/6xie27.gif" width="500" title="hover text">
 </p>
