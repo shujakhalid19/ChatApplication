@@ -30,5 +30,5 @@ AMA on my [discord server](https://discord.gg/PFqtwbVXMK)
 
 ### Home
 <p align="left">
-  <img src="./abouts/mobile/a" width="200" height="350" title="hover text">
+  <img src="./abouts/mobile/a.png" width="200" height="350" title="hover text">
 </p>
