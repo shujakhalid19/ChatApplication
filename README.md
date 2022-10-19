@@ -1,6 +1,6 @@
 # Real Time Web Chat Application
 
-An awesome web chat application which is both modern looking and user friendly built on top of Javascript, PHP and firebase with scalability in mind.This project is open to all interested in learning and innovativating in the programming world.
+An awesome web chat application which is both modern looking and user friendly built on top of Javascript, PHP and firebase with scalability in mind.This project is open to all interested in learning and innovating in the programming world.
 
 AMA on my [discord server](https://discord.gg/PFqtwbVXMK)
 
@@ -27,8 +27,10 @@ AMA on my [discord server](https://discord.gg/PFqtwbVXMK)
 ![Demo](./abouts/desktop/f.png)
 
 # Mobile
-
-### Home
+Overview of responsive design for smaller screen sizes.
 <p align="left">
-  <img src="./abouts/mobile/a.png" width="200" height="350" title="hover text">
+  <img src="./abouts/mobile/a.png" width="30%" height="60%" title="hover text">
+  <img src="./abouts/mobile/b.png" width="30%" height="60%" title="hover text">
+  <img src="./abouts/mobile/d.png" width="30%" height="60%" title="hover text">
+  <img src="./abouts/mobile/e.png" width="30%" height="60%" title="hover text">
 </p>
