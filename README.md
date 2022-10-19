@@ -29,8 +29,8 @@ AMA on my [discord server](https://discord.gg/PFqtwbVXMK)
 # Mobile
 Overview of responsive design for smaller screen sizes.
 <p align="left">
-  <img src="./abouts/mobile/a.png" width="30%" height="60%" style="margin:10px 20px 10px 0px" title="Messages">
-  <img src="./abouts/mobile/b.png" width="30%" height="60%" style="margin:10px 20px 10px 0px" title="Recorder">
-  <img src="./abouts/mobile/d.png" width="30%" height="60%" style="margin:10px 20px 10px 0px" title="Image sharing">
-  <img src="./abouts/mobile/e.png" width="30%" height="60%" style="margin:10px 20px 10px 0px" title="Profile">
+  <img src="./abouts/mobile/a.png" width="30%" height="60%" style="margin:10px 40px 10px 0px" title="Messages">
+  <img src="./abouts/mobile/b.png" width="30%" height="60%" style="margin:10px 40px 10px 0px" title="Recorder">
+  <img src="./abouts/mobile/d.png" width="30%" height="60%" style="margin:10px 40px 10px 0px" title="Image sharing">
+  <img src="./abouts/mobile/e.png" width="30%" height="60%" style="margin:10px 40px 10px 0px" title="Profile">
 </p>
